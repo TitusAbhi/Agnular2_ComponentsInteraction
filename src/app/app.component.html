@@ -1,4 +1,4 @@
 <h1>
-    {{title}}
+    <input type="text" name="text" [(ngModel)]="inputValue" />
     <app-child [currentrank]="currentRank" (changerank)="changeRank($event)"> </app-child>
 </h1>
