@@ -1,3 +1,4 @@
 <h1>
-  {{title}}
+    {{title}}
+    <app-child [currentrank]="currentRank" (changerank)="changeRank($event)"> </app-child>
 </h1>
