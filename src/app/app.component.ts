@@ -1,20 +1,29 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, DoCheck, AfterContentInit, AfterContentChecked, ViewChild } from '@angular/core';
+import { ChildComponent } from './child/child.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterContentInit, AfterContentChecked {
   title = 'app works!';
-  private currentRank : number = 10;
+  private currentRank: number = 10;
   private inputValue: string;
-
-  changeRank(rank) : void {
-     console.log("changeRank" , rank);
-   this.currentRank = rank;
+  private showChild: boolean = false;
+  @ViewChild(ChildComponent) child: ChildComponent;
+  ngOnInit() {
+    setTimeout(() => {
+      this.showChild = true;
+    },3000);
   }
-  ngDoCheck() : void {
-    console.log("ngDoCheck ",this.inputValue);
+  ngAfterContentInit() {
+    console.log("ngAfterContentInit called");
+  }
+  ngAfterContentChecked() {
+    console.log("ngAfterContentChecked called ",this.inputValue);
+  }
+  siblingEvent(event) {
+    this.child.interaction();
   }
 }

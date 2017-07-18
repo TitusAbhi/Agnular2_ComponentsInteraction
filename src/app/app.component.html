@@ -1,4 +1,9 @@
 <h1>
-    <input type="text" name="text" [(ngModel)]="inputValue" />
-    <app-child [currentrank]="currentRank" (changerank)="changeRank($event)"> </app-child>
+    {{title}}
+    <app-child #appchild>
+        <label> ng-content </label>
+        <input type="text" name="text" [(ngModel)]="inputValue" />
+    </app-child>
+    <!--<app-sibling (siblingevent)="appchild.interaction()"> </app-sibling>-->
+    <!--<app-sibling (siblingevent)="siblingEvent($event)"> </app-sibling>-->
 </h1>

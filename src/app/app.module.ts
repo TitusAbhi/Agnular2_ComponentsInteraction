@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
+import { SiblingComponent } from './sibling/sibling.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent
+    ChildComponent,
+    SiblingComponent
   ],
   imports: [
     BrowserModule,
