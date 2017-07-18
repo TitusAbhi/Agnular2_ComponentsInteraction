@@ -12,6 +12,6 @@ export class ChildComponent implements OnInit {
    
   }
   public interaction() : void {
-    alert("interacted check");
+    alert("Components are interacted");
   }
 }
